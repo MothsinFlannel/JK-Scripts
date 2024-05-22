@@ -1,0 +1,10 @@
+develop:
+  script:
+  - ./deploy/deploy.sh develop
+  stage: deploy
+  tags:
+  - develop
+  only:
+  - develop
+  allow_failure: false
+

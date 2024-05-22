@@ -1,0 +1,76 @@
+{
+  "name": "vcard/backend",
+  "type": "application",
+  "license": "Commercial",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2",
+    "ext-json": "*",
+    "ext-zip": "*",
+    "yidas/yii2-bower-asset": "~2.0.13",
+    "yiisoft/yii2": "~2.0.0",
+    "yiisoft/yii2-swiftmailer": "~2.0.0",
+    "voodoo-rocks/yii2-api": "^5.0",
+    "voodoo-rocks/yii2-environment": "^4.1",
+    "voodoo-rocks/yii2-upload-image": "^1.0",
+    "voodoo-rocks/yii2-core": "^5.8",
+    "voodoo-rocks/yii2-rbac": "dev-develop",
+    "phpoffice/phpspreadsheet": "^1.20",
+    "yiisoft/yii2-queue": "^2.3"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.0.0",
+    "yiisoft/yii2-gii": "~2.0.0",
+    "yiisoft/yii2-faker": "~2.0.0",
+    "codeception/codeception": "^5.0",
+    "codeception/module-db": "^3.1",
+    "codeception/module-rest": "^3.3",
+    "codeception/module-phpbrowser": "^3.0",
+    "codeception/module-yii2": "^1.1",
+    "codeception/module-asserts": "^3.0"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "yii\\composer\\Installer::postInstall"
+    ],
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject",
+      "yii\\composer\\Installer::postInstall"
+    ]
+  },
+  "extra": {
+    "yii\\composer\\Installer::postCreateProject": {
+      "setPermission": [
+        {
+          "runtime": "0777",
+          "web/assets": "0777",
+          "yii": "0755"
+        }
+      ]
+    },
+    "yii\\composer\\Installer::postInstall": {
+      "generateCookieValidationKey": [
+        "config/web.php"
+      ]
+    },
+    "writable": [
+      "runtime",
+      "web/assets"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

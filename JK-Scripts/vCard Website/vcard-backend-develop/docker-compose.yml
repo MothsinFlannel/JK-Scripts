@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www/public/
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/logs:/var/log/nginx/
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www/public
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: vcard
+      MYSQL_ROOT_PASSWORD: vcard
+      MYSQL_USER: vcard
+      MYSQL_PASSWORD: vcard
+    ports:
+      - 33060:3306
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:

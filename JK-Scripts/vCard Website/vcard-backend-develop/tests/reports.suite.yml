@@ -1,0 +1,11 @@
+actor: ReportsTester
+modules:
+  enabled:
+    - Asserts
+    - Yii2:
+        configFile: 'config/test.php'
+    - \Helper\Api
+    - REST:
+        url: http://localhost/vcard-backend/
+        depends: PhpBrowser
+        part: Json

@@ -1,0 +1,348 @@
+@font-face {
+  font-family: 'Circular Std Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Circular Std Book'),
+    url('~static/fonts/CircularStd-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Circular Std Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Circular Std Medium'),
+    url('~static/fonts/CircularStd-Medium.woff') format('woff');
+}
+
+$primary: #5969ff;
+$secondary: #ff407b;
+$light: #7171a6;
+$info: #6c757d;
+$font-family-base: 'Circular Std Book', serif;
+$body-bg: #efeff6;
+$body-color: #71748d;
+$h2-font-size: 2rem;
+$h3-font-size: 1.25rem;
+$h6-font-size: 0.875rem;
+$headings-font-family: 'Circular Std Medium', serif;
+$headings-font-weight: normal;
+$headings-color: #3d405c;
+$card-cap-bg: #fff;
+$card-cap-color: #3d405c;
+$table-th-font-weight: normal;
+$pagination-color: #71748d;
+$pagination-hover-color: #fff;
+$pagination-hover-bg: $primary;
+$pagination-hover-border-color: $primary;
+$pagination-active-color: #fff;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $primary;
+$small-font-size: 0.75rem;
+$input-btn-font-size: 0.875rem;
+$list-group-item-padding-y: 1.25rem;
+$list-group-item-padding-x: 1.25rem;
+$dropdown-font-size: 0.875rem;
+$dropdown-item-padding-y: 0.5rem;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+$default-color: #71748d;
+$primary-color: #5969ff;
+
+@import '~vue2-datepicker/scss/index.scss';
+
+@import '~vue-select/src/scss/vue-select.scss';
+
+.app-card {
+  &__table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -16px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.mx-datepicker {
+  width: 250px;
+}
+
+.mx-input {
+  height: 31px;
+
+  &:hover {
+    border-color: #ced4da;
+  }
+
+  &:focus {
+    border-color: #d9dcff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(89, 105, 255, 0.25);
+  }
+}
+
+body {
+  min-width: 576px;
+
+  @media (max-width: 767px) {
+    min-height: 1280px;
+  }
+}
+
+#__nuxt {
+  font-size: 0.875rem;
+}
+
+.modal-backdrop {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (min-width: 1200px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+.card-header {
+  font-family: 'Circular Std Medium', serif;
+}
+
+.table {
+  a {
+    color: #71748d;
+
+    &:hover,
+    &:focus {
+      color: #5969ff;
+    }
+  }
+
+  td,
+  th {
+    vertical-align: middle;
+  }
+}
+
+.foot-no-border {
+  td {
+    border: 0;
+  }
+}
+
+.location-inactive {
+  & > td {
+    background: #d3acb1;
+    border-color: #ecc0c4;
+  }
+}
+
+.location-test {
+  & > td {
+    background: #ffa2ad;
+    border-color: #ecc0c4;
+  }
+}
+
+.additional-table {
+  & tbody td[aria-colindex='1'],
+  & thead th[aria-colindex='1'] {
+    width: 25%;
+  }
+
+  & tbody td[aria-colindex='3'],
+  & thead th[aria-colindex='3'] {
+    width: 20%;
+  }
+
+  & tbody td,
+  & thead th {
+    border: none;
+  }
+
+  & tbody tr:not(:last-child),
+  & thead tr:not(:last-child) {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  & .hidden {
+    display: none !important;
+  }
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 1px;
+}
+
+.table .thead-light th {
+  background-color: #f9f9ff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(230, 230, 242, 0.5);
+}
+
+.table .thead-light th,
+.table .thead-white th {
+  color: #3d405c;
+  font-family: 'Circular Std Medium', serif;
+  font-weight: normal;
+  vertical-align: middle;
+  position: relative;
+}
+
+.b-pagination-pills .page-item .page-link {
+  border-radius: calc(0.25rem - 1px) !important;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+  top: 0.125rem;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+.is-invalid {
+  .vs__dropdown-toggle {
+    border: 1px solid $danger;
+  }
+}
+.is-valid {
+  .vs__dropdown-toggle {
+    border: 1px solid $success;
+  }
+}
+
+.vs__selected,
+.vs__search,
+.vs__search:focus {
+  margin-left: 0;
+  padding: 0.0625rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+.vs__selected {
+  color: #495057;
+}
+
+.vs__clear {
+  margin-top: -0.1875rem;
+}
+
+.vs__spinner,
+.vs__spinner::after {
+  width: 4em;
+  height: 4em;
+}
+.table.b-table > thead > tr > [aria-sort='descending'],
+.table.b-table > thead > tr > [aria-sort='ascending'],
+.table.b-table > thead > tr > [aria-sort='none'],
+.table.b-table > tfoot > tr > [aria-sort='descending'],
+.table.b-table > tfoot > tr > [aria-sort='ascending'],
+.table.b-table > tfoot > tr > [aria-sort='none'] {
+  background-image: none;
+}
+.table.b-table > thead > tr > [aria-sort='none']::before,
+.table.b-table > thead > tr > [aria-sort='descending']::before,
+.table.b-table > thead > tr > [aria-sort='ascending']::before,
+.table.b-table > tfoot > tr > [aria-sort='none']::before,
+.table.b-table > tfoot > tr > [aria-sort='descending']::before,
+.table.b-table > tfoot > tr > [aria-sort='ascending']::before,
+.table.b-table > thead > tr > [aria-sort='none']::after,
+.table.b-table > thead > tr > [aria-sort='descending']::after,
+.table.b-table > thead > tr > [aria-sort='ascending']::after,
+.table.b-table > tfoot > tr > [aria-sort='none']::after,
+.table.b-table > tfoot > tr > [aria-sort='descending']::after,
+.table.b-table > tfoot > tr > [aria-sort='ascending']::after {
+  position: absolute;
+  bottom: calc(50% - 10.5px);
+  display: block;
+  opacity: 0.3;
+}
+.table.b-table > thead > tr > [aria-sort='none']::before,
+.table.b-table > thead > tr > [aria-sort='descending']::before,
+.table.b-table > thead > tr > [aria-sort='ascending']::before,
+.table.b-table > tfoot > tr > [aria-sort='none']::before,
+.table.b-table > tfoot > tr > [aria-sort='descending']::before,
+.table.b-table > tfoot > tr > [aria-sort='ascending']::before {
+  right: 1em;
+  content: '\2191';
+}
+
+.table.b-table > thead > tr > [aria-sort='none']::after,
+.table.b-table > thead > tr > [aria-sort='descending']::after,
+.table.b-table > thead > tr > [aria-sort='ascending']::after,
+.table.b-table > tfoot > tr > [aria-sort='none']::after,
+.table.b-table > tfoot > tr > [aria-sort='descending']::after,
+.table.b-table > tfoot > tr > [aria-sort='ascending']::after {
+  right: 0.5rem;
+  content: '\2193';
+}
+
+.table.b-table > thead > tr > [aria-sort='ascending']::before,
+.table.b-table > thead > tr > [aria-sort='descending']::after,
+.table.b-table > tfoot > tr > [aria-sort='ascending']::before,
+.table.b-table > tfoot > tr > [aria-sort='descending']::after {
+  opacity: 1;
+}
+.btn-link-hover:hover {
+  color: white !important;
+}
+
+.vue-quick-edit {
+  &__link {
+    color: #71748d !important;
+    &--is-clickable {
+      color: #08c !important;
+    }
+  }
+  &__buttons {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.table-responsive {
+  overflow-y: hidden;
+}
+
+.mx-time-column .mx-time-list::after {
+  height: 0;
+}
+
+.date-picker {
+  .form-control {
+    padding-right: calc(1.5em + 1.75rem) !important;
+    background-position: right calc(0.375em + 1.5rem) center;
+  }
+}
+
+.__bar-is-horizontal {
+  border-radius: 15px !important;
+}
+
+.btn-xs {
+  padding: 0 0.5rem;
+  line-height: 16px;
+  font-size: 12px;
+}

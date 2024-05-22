@@ -1,0 +1,22 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  tags:
+    - develop
+  only:
+    - develop
+  script:
+    #!/usr/bin/env bash
+    # Ensure if any command fails your entire build script fails
+    - set -eo pipefail
+    # Go to the deploy folder
+    - cd deploy
+    # Install dependencies
+    - npm ci
+    # Launch deployer
+    - npx shipit development deploy
+    # Clean up
+    - rm -f package-lock.json
+    - rm -rf node_modules

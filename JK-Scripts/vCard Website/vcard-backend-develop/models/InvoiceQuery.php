@@ -1,0 +1,43 @@
+<?php
+
+namespace app\models;
+
+use vr\core\ActiveQueryTrait;
+use yii\db\ActiveQuery;
+
+/**
+ * This is the ActiveQuery class for [[Invoice]].
+ *
+ * @see Invoice
+ */
+class InvoiceQuery extends ActiveQuery
+{
+    use ActiveQueryTrait;
+
+    /**
+     * @param $date
+     * @return $this
+     */
+    public function forDate($date): self
+    {
+        return $this->andWhere('since <= :date and :date <= until', [':date' => $date]);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return Invoice[]|array
+     */
+    public function all($db = null)
+    {
+        return parent::all($db);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return Invoice|array|null
+     */
+    public function one($db = null)
+    {
+        return parent::one($db);
+    }
+}

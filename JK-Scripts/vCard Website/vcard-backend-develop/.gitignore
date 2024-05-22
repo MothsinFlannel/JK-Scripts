@@ -1,0 +1,17 @@
+local
+production
+staging
+develop
+flavors/*
+sitemap.xml
+
+web/assets
+web/uploads/*
+web/output/*
+
+vendor
+runtime
+.idea
+.DS_Store
+.run/*
+composer.lock
