@@ -1,0 +1,6 @@
+# need Python
+
+# run in CMD
+pip install gspread
+pip install oauth2client
+pip install pynput
